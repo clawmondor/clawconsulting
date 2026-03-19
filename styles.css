@@ -615,6 +615,110 @@ section h2 {
   font-size: 0.8125rem;
 }
 
+/* Floating Discovery Form Widget */
+.floating-form-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 340px;
+  background: var(--dark-secondary);
+  border: 1px solid var(--primary);
+  border-radius: 16px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 90, 54, 0.15);
+  z-index: 9999;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+.floating-form-widget:hover {
+  box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 90, 54, 0.3);
+}
+
+.floating-form-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(255, 90, 54, 0.15) 0%, rgba(255, 90, 54, 0.05) 100%);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+}
+
+.floating-form-header span {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: var(--light);
+}
+
+.floating-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-light);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.floating-toggle-btn:hover {
+  color: var(--primary);
+  background: var(--primary-subtle);
+}
+
+.floating-toggle-btn .chevron-icon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-form-widget.collapsed .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.floating-form-body {
+  max-height: 520px;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s;
+}
+
+.floating-form-widget.collapsed .floating-form-body {
+  max-height: 0;
+}
+
+.floating-contact-form {
+  padding: 20px 18px 18px;
+}
+
+.floating-contact-form .form-group {
+  margin-bottom: 14px;
+}
+
+.floating-contact-form .form-group label {
+  font-size: 0.8125rem;
+  margin-bottom: 6px;
+}
+
+.floating-contact-form .form-group input,
+.floating-contact-form .form-group textarea {
+  padding: 10px 14px;
+  font-size: 0.875rem;
+}
+
+.floating-contact-form textarea {
+  resize: none;
+}
+
+@media (max-width: 480px) {
+  .floating-form-widget {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
+  }
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {

@@ -187,6 +187,52 @@
     </div>
   </section>
 
+  <!-- Floating Discovery Form -->
+  <div class="floating-form-widget" id="floatingWidget">
+    <div class="floating-form-header" id="floatingToggle">
+      <span>🦞 Book Discovery Call</span>
+      <button class="floating-toggle-btn" aria-label="Toggle form" aria-expanded="true">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="chevron-icon" d="M2 4L7 9L12 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="floating-form-body" id="floatingFormBody">
+      <form class="floating-contact-form" action="#" method="POST">
+        <div class="form-group">
+          <label for="float-name">Your Name</label>
+          <input type="text" id="float-name" name="name" required placeholder="John Smith">
+        </div>
+        <div class="form-group">
+          <label for="float-email">Email</label>
+          <input type="email" id="float-email" name="email" required placeholder="john@business.com">
+        </div>
+        <div class="form-group">
+          <label for="float-company">Business Name</label>
+          <input type="text" id="float-company" name="company" placeholder="Your Business LLC">
+        </div>
+        <div class="form-group">
+          <label for="float-message">What challenges are you facing?</label>
+          <textarea id="float-message" name="message" rows="3" placeholder="Tell us what you want to automate..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary full-width">Request Discovery Call</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const widget = document.getElementById('floatingWidget');
+    const toggle = document.getElementById('floatingToggle');
+    const body = document.getElementById('floatingFormBody');
+    const btn = toggle.querySelector('.floating-toggle-btn');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = !widget.classList.contains('collapsed');
+      widget.classList.toggle('collapsed', isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    });
+  </script>
+
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 Claw Consulting. AI for Local Businesses.</p>
